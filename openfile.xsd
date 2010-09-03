@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:types="http://oss.dbc.dk/ns/openfile" 
+targetNamespace="http://oss.dbc.dk/ns/openfile" 
+elementFormDefault="qualified">
+
+<xs:element name="checkFileRequest" type="types:requestType"/>
+
+<xs:element name="checkFileResponse" type="types:fileInfoType"/>  
+
+<xs:element name="getFileRequest" type="types:requestType"/>
+
+<xs:element name="getFileResponse">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:group ref="types:fileInfoType" minOccurs="0"/>
+      <xs:element ref="types:fileContent"/>
+   </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:group name="fileInfoType">
+  <xs:sequence>
+    <xs:element ref="types:verified"/>
+    <xs:element ref="types:fileType" minOccurs="0"/>
+    <xs:element ref="types:fileSize" minOccurs="0"/>
+    <xs:element ref="types:filePath" minOccurs="0"/>
+  </xs:sequence>
+</xs:group>
+
+<xs:complexType name="requestType">
+  <xs:sequence>
+    <xs:element ref="types:filePath"/>
+    <xs:element ref="types:host"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="host" type="xs:string"/>
+<xs:element name="verified" type="xs:boolean"/>
+<xs:element name="fileType" type="xs:string"/>
+<xs:element name="fileSize" type="xs:string"/>
+<xs:element name="filePath" type="xs:string"/>
+<xs:element name="fileContent" type="xs:string"/>
+
+</xs:schema>
