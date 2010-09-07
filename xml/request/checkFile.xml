@@ -1,0 +1,17 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope"
+xmlns:xml="http://www.w3.org/XML/1998/namespace"
+xmlns:tns="http://oss.dbc.dk/ns/openfile_wsdl"
+xmlns:types="http://oss.dbc.dk/ns/openfile"
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<SOAP-ENV:Body>
+<types:checkFileRequest>
+  <fileName>?</fileName>
+  <fileType>?</fileType>
+  <types:version>?</types:version>
+  <types:filePath>?</types:filePath>
+  <types:host>?</types:host>
+</types:checkFileRequest>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
