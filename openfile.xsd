@@ -14,7 +14,8 @@ elementFormDefault="qualified">
   <xs:complexType>
     <xs:sequence>
       <xs:group ref="types:fileInfoType" minOccurs="0"/>
-      <xs:element ref="types:fileContent"/>
+      <xs:element ref="types:fileContent" minOccurs="0"/>
+      <xs:element ref="types:error" minOccurs="0"/>	
    </xs:sequence>
   </xs:complexType>
 </xs:element>
@@ -25,13 +26,17 @@ elementFormDefault="qualified">
     <xs:element ref="types:fileType" minOccurs="0"/>
     <xs:element ref="types:fileSize" minOccurs="0"/>
     <xs:element ref="types:filePath" minOccurs="0"/>
+    <xs:element ref="types:timeStamp" minOccurs="0"/>
   </xs:sequence>
 </xs:group>
 
 <xs:complexType name="requestType">
   <xs:sequence>
-    <xs:element ref="types:filePath"/>
-    <xs:element ref="types:host"/>
+    <xs:element ref="types:fileName"/>
+    <xs:element ref="types:fileType"/>
+    <xs:element ref="types:version"/>
+    <xs:element ref="types:filePath" />
+    <xs:element ref="types:host" minOccurs="0"/>
   </xs:sequence>
 </xs:complexType>
 
@@ -41,5 +46,9 @@ elementFormDefault="qualified">
 <xs:element name="fileSize" type="xs:string"/>
 <xs:element name="filePath" type="xs:string"/>
 <xs:element name="fileContent" type="xs:string"/>
+<xs:element name="timeStamp" type="xs:string"/>
+<xs:element name="version" type="xs:string"/>
+<xs:element name="fileName" type="xs:string"/>
+<xs:element name="error" type="xs:string"/>
 
 </xs:schema>
