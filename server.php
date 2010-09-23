@@ -93,6 +93,7 @@ class openfile_server extends webServiceServer
  
   private function get_file($params)
   {
+ 
     $fileName = $params->fileName->_value;
     $fileType = $params->fileType->_value;
     $filePath = $params->filePath->_value;
